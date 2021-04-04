@@ -8,16 +8,18 @@
 <body>
 
 <nav id="navbar">
+	<button id="theme-switcher" alt="switch day/night mode" role="switch day/night mode" onclick="swapTheme()" >&#9788;<hr>&#9789;</button>
 	<ul>
-		<li><a href="#about-me">About</a></li>
+		<li id="nav-about-me"><a href="#about-me">About Me</a></li>
 		<li><a href="#projects">Work</a></li>
 		<li><a href="#contact-me">Contact</a></li>
 	</ul>
 </nav>
 <main>
 	<section id="welcome-section">
+		<img id="profile-pic" src="img/Jambrose-small.jpeg" alt="Picture of John Ambrose smiling with a mutli-colorbeard">
 		<h1>Hello, I'm Jambrose!</h1>
-		<p id="welcome-tagline">and welcome to my site</p>
+		<h2 id="welcome-tagline">and welcome to my site</h2>
 	</section>
 	<section id="about-me">
 		<h2>Who are you exactly?</h1>
@@ -39,11 +41,11 @@
 		<h2>Take a look at my work</h2>
 
 		<div id="gallery">
-			<a href="https://codepen.io/thejambrose/pen/KKpqNMJ"class="project-tile" ><img src="img/tribute_turing.png">Tribute Page</a>
+			<a href="https://codepen.io/thejambrose/pen/KKpqNMJ"class="project-tile" ><img alt="preview image of tribute page" src="img/tribute_turing.png">Tribute Page</a>
 
-			<a href="https://codepen.io/thejambrose/pen/WNvEwvJ" class="project-tile"><img src="img/prod_landing.png">Product Landing Page</a>
+			<a href="https://codepen.io/thejambrose/pen/WNvEwvJ" class="project-tile"><img alt="preview image of product langing page"src="img/prod_landing.png">Product Landing Page</a>
 
-			<a href="https://codepen.io/thejambrose/pen/LYVjgqx"class="project-tile"><img src="img/tech_doc.png">Technical Documentation</a>
+			<a href="https://codepen.io/thejambrose/pen/LYVjgqx"class="project-tile"><img alt="preview image of technical documentation page" src="img/tech_doc.png">Technical Documentation</a>
 		</div>
 		
 	</section>
@@ -53,12 +55,17 @@
 			<li><a target="_blank"id="profile-link" href="https://github.com/TheJambrose">Github</a></li>
 		</ul>
 	</section>
-</main>
-
-<footer>
+	<footer>
 	<p>&copy; Copyright 2020 </p>
 </footer>
 
+</main>
+<!-- 
+<footer>
+	<p>&copy; Copyright 2020 </p>
+</footer>
+ -->
 
 </body>
+<script src="js/script.js"></script>
 </html>

@@ -2,16 +2,16 @@
 :root {
 
 /*Day Themes*/ /*Night Themes*/
---nav-color: #4747FF /*#00008F*/;
---main-splash-color: #21BFD4 /*#3A3370*/;
---primary-backround-color: #ffffff /*#E5E5E5*/;
---primary-text-color: #212121;
---secondary-backround-color: #E5E5E5 /*#292929*/;
---secondary-text-color: #212121 /*#E5E5E5*/;
+--nav-color: /*#4747FF*/ #00008F;
+--main-splash-color: /*#00a4b6*/#3A3370;
+--primary-backround-color: /*#ffffff*/ #E5E5E5;
+--secondary-backround-color:/* #E5E5E5*/ #292929;
+--secondary-text-color: /*#212121*/ #E5E5E5;
 
 /*Neutral Themes*/
 --very-dark-background-color: #494949;
---text-primary-color: #FFFFFF;
+--primary-text-color: #212121;
+--white-primary-color: #FFFFFF;
 }
 
 body {
@@ -24,12 +24,39 @@ body {
 }
 
 #navbar {
-	position: fixed;
+	/*position: fixed;*/
 	top: 0;
 	left: 0;
 	background: var(--nav-color);
 	display: flex;
 	width: 100%;
+}
+
+#theme-switcher {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: fixed;
+	top:4px;
+	left: 2px;
+	border: 1px solid var(--white-primary-color);
+	background: lightgrey;
+/*	transform: rotate(-40deg);*/
+	font-size: 20px;
+	font-kerning: 0;
+	background: var(--nav-color);
+	color: var(--white-primary-color);
+}
+
+#theme-switcher hr {
+	padding: 0;
+	margin: 0;
+}
+
+#theme-switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 #navbar ul {
@@ -51,7 +78,7 @@ nav a {
 	font-size: 20px;
 	padding: 20px;
 	text-decoration: none;
-	color: var(--text-primary-color);
+	color: var(--white-primary-color);
 }
 
 section {
@@ -75,7 +102,7 @@ main {
 #welcome-section {
 	background: var(--main-splash-color);
 	height: 100vh;
-	color: var(--text-primary-color);
+	color: var(--white-primary-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -89,13 +116,18 @@ h1 {
 
 #welcome-tagline {
 	/*font-style: italic;*/
-	font-weight: 200;
+	/*font-weight: 400;*/
 }
 
+#profile-pic {
+	border: 1px solid black;
+	border-radius: 50%;
+}
 
 #about-me {
 	background: var(--secondary-backround-color);
 	color: var(--secondary-text-color);
+	grid-area: about-me;
 }
 
 /******************
@@ -112,7 +144,8 @@ BEGIN GALLERY
 	color: var(--primary-text-color);
 	text-align: center;
 	padding: 10px 20px;
-	min-height: 850px;
+	/*min-height: 850px;*/
+	grid-area: projects;
 }
 
 #gallery {
@@ -159,11 +192,12 @@ BEGIN FOOTER
 ******************/
 #contact-me, footer, #contact-me a{
 	background: var(--very-dark-background-color);
-	color: var(--text-primary-color);
+	color: var(--white-primary-color);
 }
 
 #contact-me {
 	height: 60px;
+	grid-area: contact-me;
 }
 
 #contact-me #link-list {
@@ -192,6 +226,7 @@ footer {
 	height: 100%;
 	text-align: center;
 	font-size: 12px;
+	grid-area: footer;
 }
 
 /******************
@@ -202,8 +237,63 @@ END FOOTER
 BEGIN RESPONSIVE
 ******************/
 
-@media (max-width: 1000px) {
-	#gallery {
+#gallery {
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+
+/*688px*/
+@media (min-width: 43em)  {
+	#gallery {
+	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+	}
 }
+
+/*992px*/
+@media (min-width: 62em) {
+	
+	/*at this size about me section is already visible so hide this link*/
+	#nav-about-me {
+		display: none;
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat();
+		grid-template-areas: 
+		"welcome about-me"
+		"projects projects"
+		"contact-me contact-me"
+		"footer footer"
+		;
+	}
+	#gallery {
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
