@@ -33,16 +33,16 @@ body {
 }
 
 #theme-switcher {
-	width: 50px;
-	height: 50px;
+	width: 2.75em;
+	height: 2.75em;
 	border-radius: 50%;
 	position: fixed;
-	top:4px;
+	bottom:4px;
 	left: 2px;
 	border: 1px solid var(--white-primary-color);
 	background: lightgrey;
 /*	transform: rotate(-40deg);*/
-	font-size: 20px;
+	font-size: 1.25em;
 	font-kerning: 0;
 	background: var(--nav-color);
 	color: var(--white-primary-color);
@@ -63,20 +63,20 @@ body {
 	margin: 0;
 	width: 100%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-around;
 	box-shadow: 1px 0 1px 1px black;
+	padding:0;
 }
 
 nav li {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
-	align-items: stretch;
 }
 
 nav a {
-	font-size: 20px;
-	padding: 20px;
+	font-size: 1.25em;
+	padding: 0.25em 0;
 	text-decoration: none;
 	color: var(--white-primary-color);
 }
@@ -110,8 +110,9 @@ main {
 }
 
 h1 {
-	font-size: 45px;
+	font-size: 4em;
 	margin: 0;
+	text-align: center;
 }
 
 #welcome-tagline {
@@ -190,17 +191,22 @@ END GALLERY
 /******************
 BEGIN FOOTER
 ******************/
-#contact-me, footer, #contact-me a{
+#tech-social, footer, #tech-social a{
 	background: var(--very-dark-background-color);
 	color: var(--white-primary-color);
 }
 
-#contact-me {
-	height: 60px;
-	grid-area: contact-me;
+#tech-social {
+	/*height: 60px;*/
+	grid-area: tech-social;
+	font-size: .75em;
 }
 
-#contact-me #link-list {
+#tech-social p {
+	font-size: 1.25em;
+}
+
+#tech-social #link-list {
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -208,7 +214,7 @@ BEGIN FOOTER
 	justify-content: center;
 }
 
-#contact-me li {
+#tech-social li {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
@@ -225,7 +231,7 @@ BEGIN FOOTER
 footer {
 	height: 100%;
 	text-align: center;
-	font-size: 12px;
+	font-size: 0.8em;
 	grid-area: footer;
 }
 
@@ -242,16 +248,46 @@ BEGIN RESPONSIVE
 }
 
 /*688px*/
-@media (min-width: 43em)  {
+@media (min-width: 42em)  {
+
 	#gallery {
 	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
 	}
+
+	nav a {
+		font-size: 1.5em;
+		padding: 1.5em;
+	}
+
+	h1 {
+		font-size: 3em;
+	}
+
+	footer {
+		font-size: 0.8em;
+	}
+
 }
+
 
 /*992px*/
 @media (min-width: 62em) {
 	
+
+	h1 {
+		font-size: 3em;
+	}
+	
 	/*at this size about me section is already visible so hide this link*/
+	#navbar ul {
+		margin: 0;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		box-shadow: 1px 0 1px 1px black;
+		padding:0;
+	}
+
 	#nav-about-me {
 		display: none;
 	}
@@ -263,7 +299,7 @@ BEGIN RESPONSIVE
 		grid-template-areas: 
 		"welcome about-me"
 		"projects projects"
-		"contact-me contact-me"
+		"tech-social tech-social"
 		"footer footer"
 		;
 	}
