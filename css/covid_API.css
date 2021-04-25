@@ -16,6 +16,7 @@
 main {
     min-height: 100vh;
     display: flex;
+    background-color: var(--primary-backround-color);
 }
 
 section {
@@ -121,6 +122,9 @@ BEGIN Responsive
     }
     select {
         width: 75%;
+    }
+    footer {
+        display: block;
     }
 }
 
