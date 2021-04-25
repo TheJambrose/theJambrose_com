@@ -15,6 +15,7 @@
 
 main {
     min-height: 100vh;
+    display: flex;
 }
 
 section {
@@ -110,8 +111,8 @@ BEGIN Responsive
 ******************/
 @media (min-width: 42em) {
     main {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        height: 100vh;
     }
     fieldset {
         width: 350px;
@@ -126,8 +127,8 @@ BEGIN Responsive
 
 @media (min-width: 62em) {
     main {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        height: 100vh;
     }
     fieldset {
         width: 500px;
