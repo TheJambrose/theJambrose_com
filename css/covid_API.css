@@ -73,8 +73,7 @@ BEGIN FORM STYLING
 fieldset {
     display: flex;
     flex-direction: column;
-    width: 350px;
-    font-size: 1em;
+        font-size: 1em;
 }
 
 fieldset > * {
@@ -109,6 +108,21 @@ END FORM STYLING
 /******************
 BEGIN Responsive
 ******************/
+@media (min-width: 42em) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    fieldset {
+        width: 350px;
+        justify-content: center;
+        align-content: center;
+    }
+    select {
+        width: 75%;
+    }
+}
+
 
 @media (min-width: 62em) {
     main {
