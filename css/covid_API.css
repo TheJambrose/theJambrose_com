@@ -123,9 +123,7 @@ BEGIN Responsive
     select {
         width: 75%;
     }
-    footer {
-        display: block;
-    }
+    
 }
 
 
