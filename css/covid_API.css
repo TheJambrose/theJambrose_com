@@ -1,0 +1,129 @@
+:root {
+
+    /*Day Themes*/ /*Night Themes*/
+    --nav-color: /*#4747FF*/ #00008F;
+    --main-splash-color: /*#00a4b6*/#3A3370;
+    --primary-backround-color: /*#ffffff*/ #E5E5E5;
+    --secondary-backround-color:/* #E5E5E5*/ #292929;
+    --secondary-text-color: /*#212121*/ #E5E5E5;
+    
+    /*Neutral Themes*/
+    --very-dark-background-color: #494949;
+    --primary-text-color: #212121;
+    --white-primary-color: #FFFFFF;
+}
+
+main {
+    min-height: 100vh;
+}
+
+section {
+    background-color: var(--primary-backround-color);
+    height: 100%;
+}
+
+
+/******************
+BEGIN Table Styling
+******************/
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    text-align: center;
+    background-color: ;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+}
+
+table caption {
+    font-size: 1.1em;
+}
+thead tr {
+    background-color: var(--nav-color);
+    color: #ffffff;
+    border: 1px solid var(--nav-color);
+    /* text-align: left; */
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+tbody tr {
+    border: 1px solid var(--nav-color);
+}
+/* if I ever make this work with larger data sets */
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #026752;
+}
+
+/******************
+END Table Styling
+******************/
+/******************
+BEGIN FORM STYLING
+******************/
+fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    font-size: 1em;
+}
+
+fieldset > * {
+    margin: 10px;;
+}
+
+select {
+    font-size: 1em;
+}
+
+button {
+    background: var(--main-splash-color);
+    color: var(--white-primary-color);
+    height: 2.5em;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:active {
+    background:  var(--nav-color);
+}
+button:disabled {
+    background: none;
+    color: black;
+}
+
+
+/******************
+END FORM STYLING
+******************/
+
+/******************
+BEGIN Responsive
+******************/
+
+@media (min-width: 62em) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    fieldset {
+        width: 500px;
+        justify-content: center;
+        align-content: center;
+    }
+    select {
+        width: 75%;
+    }
+}
+/******************
+END  Responsive
+******************/

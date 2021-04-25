@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Compare Covid Deaths Between States</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/covid_API.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<nav id="navbar">
+		<button id="theme-switcher" alt="switch day/night mode" role="switch day/night mode"
+			onclick="swapTheme()">&#9788;
+			<hr>&#9789;
+		</button>
+		<ul>
+			<li id="home-button"><a href="../index.html">Home</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section id="intro">
+			<h2>CDC API: Compare States</h2>
+			<p>As of today, COVID-19 continues to be an important issue that many people continue to stay up to date on.
+				Making use of a public API (made available for free by the CDC), you can pull a report for the running
+				total of deaths related COVID-19 for each US state.</p>
+			<p>Per Dataset details, this information is updated twice a daily. I’ve found this to be generally correct,
+				though daily does not appear to include weekends as or right now.</p>
+			<fieldset>
+				<legend>Choose Two States to Compare</legend>
+
+				<label for="stateA">State Option 1
+					<select id="stateA">
+						<option value="AL">Alabama (AL)</option>
+						<option value="AK">Alaska (AK)</option>
+						<option value="AZ">Arizona (AZ)</option>
+						<option value="AR">Arkansas (AR)</option>
+						<option value="CA">California (CA)</option>
+						<option value="CO">Colorado (CO)</option>
+						<option value="CT">Connecticut (CT)</option>
+						<option value="DE">Delaware (DE)</option>
+						<option value="DC">District Of Columbia (DC)</option>
+						<option value="FL">Florida (FL)</option>
+						<option value="GA">Georgia (GA)</option>
+						<option value="HI">Hawaii (HI)</option>
+						<option value="ID">Idaho (ID)</option>
+						<option value="IL">Illinois (IL)</option>
+						<option value="IN">Indiana (IN)</option>
+						<option value="IA">Iowa (IA)</option>
+						<option value="KS">Kansas (KS)</option>
+						<option value="KY">Kentucky (KY)</option>
+						<option value="LA">Louisiana (LA)</option>
+						<option value="ME">Maine (ME)</option>
+						<option value="MD">Maryland (MD)</option>
+						<option value="MA">Massachusetts (MA)</option>
+						<option value="MI">Michigan (MI)</option>
+						<option value="MN">Minnesota (MN)</option>
+						<option value="MS">Mississippi (MS)</option>
+						<option value="MO">Missouri (MO)</option>
+						<option value="MT">Montana (MT)</option>
+						<option value="NE">Nebraska (NE)</option>
+						<option value="NV">Nevada (NV)</option>
+						<option value="NH">New Hampshire (NH)</option>
+						<option value="NJ">New Jersey (NJ)</option>
+						<option value="NM">New Mexico (NM)</option>
+						<option value="NY">New York (NY)</option>
+						<option value="NC">North Carolina (NC)</option>
+						<option value="ND">North Dakota (ND)</option>
+						<option value="OH">Ohio (OH)</option>
+						<option value="OK">Oklahoma (OK)</option>
+						<option value="OR">Oregon (OR)</option>
+						<option value="PA">Pennsylvania (PA)</option>
+						<option value="RI">Rhode Island (RI)</option>
+						<option value="SC">South Carolina (SC)</option>
+						<option value="SD">South Dakota (SD)</option>
+						<option value="TN">Tennessee (TN)</option>
+						<option value="TX">Texas (TX)</option>
+						<option value="UT">Utah (UT)</option>
+						<option value="VT">Vermont(VT)</option>
+						<option value="VA">Virginia(VA)</option>
+						<option value="WA">Washington(WA)</option>
+						<option value="WV">West Virginia(WV)</option>
+						<option value="WI">Wisconsin (WI)</option>
+						<option value="WY">Wyoming (WY)</option>
+					</select>
+				</label>
+				<label for="stateB">State Option 2
+					<select id="stateB">
+						<option value="AL">Alabama (AL)</option>
+						<option value="AK">Alaska (AK)</option>
+						<option value="AZ">Arizona (AZ)</option>
+						<option value="AR">Arkansas (AR)</option>
+						<option value="CA">California (CA)</option>
+						<option value="CO">Colorado (CO)</option>
+						<option value="CT">Connecticut (CT)</option>
+						<option value="DE">Delaware (DE)</option>
+						<option value="DC">District Of Columbia (DC)</option>
+						<option value="FL">Florida (FL)</option>
+						<option value="GA">Georgia (GA)</option>
+						<option value="HI">Hawaii (HI)</option>
+						<option value="ID">Idaho (ID)</option>
+						<option value="IL">Illinois (IL)</option>
+						<option value="IN">Indiana (IN)</option>
+						<option value="IA">Iowa (IA)</option>
+						<option value="KS">Kansas (KS)</option>
+						<option value="KY">Kentucky (KY)</option>
+						<option value="LA">Louisiana (LA)</option>
+						<option value="ME">Maine (ME)</option>
+						<option value="MD">Maryland (MD)</option>
+						<option value="MA">Massachusetts (MA)</option>
+						<option value="MI">Michigan (MI)</option>
+						<option value="MN">Minnesota (MN)</option>
+						<option value="MS">Mississippi (MS)</option>
+						<option value="MO">Missouri (MO)</option>
+						<option value="MT">Montana (MT)</option>
+						<option value="NE">Nebraska (NE)</option>
+						<option value="NV">Nevada (NV)</option>
+						<option value="NH">New Hampshire (NH)</option>
+						<option value="NJ">New Jersey (NJ)</option>
+						<option value="NM">New Mexico (NM)</option>
+						<option value="NY">New York (NY)</option>
+						<option value="NC">North Carolina (NC)</option>
+						<option value="ND">North Dakota (ND)</option>
+						<option value="OH">Ohio (OH)</option>
+						<option value="OK">Oklahoma (OK)</option>
+						<option value="OR">Oregon (OR)</option>
+						<option value="PA">Pennsylvania (PA)</option>
+						<option value="RI">Rhode Island (RI)</option>
+						<option value="SC">South Carolina (SC)</option>
+						<option value="SD">South Dakota (SD)</option>
+						<option value="TN">Tennessee (TN)</option>
+						<option value="TX">Texas (TX)</option>
+						<option value="UT">Utah (UT)</option>
+						<option value="VT">Vermont(VT)</option>
+						<option value="VA">Virginia(VA)</option>
+						<option value="WA">Washington(WA)</option>
+						<option value="WV">West Virginia(WV)</option>
+						<option value="WI">Wisconsin (WI)</option>
+						<option value="WY">Wyoming (WY)</option>
+					</select>
+				</label>
+
+				<button onclick="confirmStates()"> Step 1: Confirm Selection</button>
+				<button id="tableGen" disabled onclick="makeBothTables()">Step 2:Generate a Table</button>
+				<button onclick="reset()">Reset</button>
+			</fieldset>
+		</section>
+		<section id="tableOutput"></section>
+
+		<section>
+			<p>This is my first successful attempt at using an API to return data that could actually be of use to
+				someone&mdash;even if that someone is only myself. You can review the full details of this dataset on
+				the
+				<a
+					href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36">CDC's
+					website</a>.
+			</p>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; Copyright 2020 </p>
+	</footer>
+
+
+</body>
+<script src="../js/script.js"></script>
+<script src="../js/covid_API.js"></script>
+
+</html>
