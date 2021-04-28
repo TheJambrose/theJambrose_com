@@ -66,6 +66,20 @@ tbody tr:last-of-type {
     border-bottom: 2px solid #026752;
 }
 
+/* add add styling for death comparison  */
+
+tbody .pos-result {
+    font-weight: 700;
+    color: rgb(196, 0, 0);
+    
+}
+
+tbody .neg-result {
+    font-weight: 700;
+    color: rgb(0, 96, 0);
+}
+
+
 /******************
 END Table Styling
 ******************/

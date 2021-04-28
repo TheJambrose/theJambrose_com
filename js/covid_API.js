@@ -142,6 +142,11 @@ function makeBothTables() {
     };
     //Finally the magic happens
     makeTable(stateAMonthlyTotals, stateBMonthlyTotals);
+    //keep a second table from being called
+    let tableGenBut = document.getElementById("tableGen");
+    tableGenBut.disabled = true;
+    let confStateBut = document.getElementById("confirm-state");
+    confStateBut.disabled = true;
 };
 
 
@@ -233,7 +238,7 @@ function makeTable(stateAObjArray, stateBObjArray) {
     //create table Head
     function generateTableHead(table) {
         //headers will be identical
-        let headerNames = [fullStateName[stateA], fullStateName[stateB]];
+        let headerNames = [fullStateName[stateA], fullStateName[stateB], "Difference in Total Death Counts"];
         let blankHeader = `Year-Month`;
         //create space for row Header names
         headerNames.unshift(blankHeader);
@@ -271,12 +276,36 @@ function makeTable(stateAObjArray, stateBObjArray) {
             let text = document.createTextNode(month);
             th.appendChild(text);
             tRow.appendChild(th);
+            //insert State A data
             let stateACell = tRow.insertCell();
             let stateAText = document.createTextNode(combinedRows[month][0]);
-            stateACell.append(stateAText);
+            stateACell.append(parseInt(stateAText.nodeValue).toLocaleString());
+            //insert State B data
             let stateBCell = tRow.insertCell();
             let stateBText = document.createTextNode(combinedRows[month][1]);
-            stateBCell.append(stateBText);
+            stateBCell.append(parseInt(stateBText.nodeValue).toLocaleString());
+            // Insert diff of death count of State B when compared to State A
+            let diffOfAandBcell = tRow.insertCell();
+            let diffInInt = parseInt(stateBText.nodeValue, 10) - parseInt(stateAText.nodeValue, 10);
+            let stateAValue = parseInt(stateAText.nodeValue, 10);
+            let diffInPerc = ((diffInInt / stateAValue) * 100).toFixed(2);
+            //Handle some 0 results
+            if (isNaN(diffInPerc)) {
+                diffInPerc = 0;
+            } else if (!isFinite(diffInPerc)) {
+                diffInPerc = "-";
+            };
+            let diffOfAandBresult = document.createTextNode(`${diffInPerc}% (${diffInInt.toLocaleString()})`);
+            //add class of neg-result or pos-results to style in css
+            if (diffInPerc > 0) {
+                diffOfAandBcell.setAttribute("class", "pos-result")
+            } else if (diffInPerc < 0) {
+                diffOfAandBcell.setAttribute("class", "neg-result")
+            }
+
+            diffOfAandBcell.append(diffOfAandBresult);
+
+
         }
 
 
@@ -312,5 +341,7 @@ function reset() {
     stateObjB = [];
     let tableGenBut = document.getElementById("tableGen");
     tableGenBut.disabled = true;
+    let confStateBut = document.getElementById("confirm-state");
+    confStateBut.disabled = false;
 
 };
