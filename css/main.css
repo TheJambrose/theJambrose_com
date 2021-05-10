@@ -72,6 +72,7 @@ nav li {
 	list-style: none;
 	display: flex;
 	flex-direction: row;
+	
 }
 
 nav a {
@@ -80,6 +81,17 @@ nav a {
 	text-decoration: none;
 	color: var(--white-primary-color);
 	text-align: center;
+	border-bottom:2px solid var(--nav-color);
+	transition: border-bottom .25s;
+}
+
+nav .selected a {
+	border-bottom: 2px solid var(--white-primary-color);
+}
+
+nav a:hover {
+	border-bottom: 2px solid var(--white-primary-color);
+	transition: border-bottom .25s;
 }
 
 section {
@@ -136,28 +148,12 @@ h1 {
 END Welcome
 ******************/
 /******************
-BEGIN GALLERY
+BEGIN Project Highlight
 ******************/
 
-#projects {
-	display: flex;
-	flex-direction: column;
-	background: var(--primary-backround-color);
-	color: var(--primary-text-color);
-	text-align: center;
-	padding: 10px 20px;
-	/*min-height: 850px;*/
-	grid-area: projects;
-}
-
-#gallery {
-	/*min-height: 35vh;*/
-	list-style: none;
-	display: grid;
-	grid-template-columns: repeat(3, minmax(200px, 1fr));
-	width: 100%;
-	padding: 0;
-	grid-gap: 20px;
+#project-highlight {
+	grid-area: project;
+	margin-bottom: 15px;
 }
 
 #gallery a {
@@ -167,7 +163,6 @@ BEGIN GALLERY
 	justify-content: center;
 	text-decoration: none;
 }
-
 .project-tile {
 	background: var(--secondary-backround-color);
 	border-radius: 8px;
@@ -178,7 +173,6 @@ BEGIN GALLERY
 	color: var(--secondary-text-color);
 }
 
-
 .project-tile img {
 	width: 300px;
 	border-radius: 5px;
@@ -186,7 +180,7 @@ BEGIN GALLERY
 
 
 /******************
-END GALLERY
+END Project Highlight
 ******************/
 
 /******************
@@ -251,9 +245,9 @@ BEGIN RESPONSIVE
 /*688px*/
 @media (min-width: 42em)  {
 
-	#gallery {
+	/* #gallery {
 	grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
-	}
+	} */
 
 	nav a {
 		font-size: 1.25em;
@@ -299,14 +293,14 @@ BEGIN RESPONSIVE
 		grid-template-rows: repeat();
 		grid-template-areas: 
 		"welcome about-me"
-		"projects projects"
+		"project project"
 		"tech-social tech-social"
 		"footer footer"
 		;
 	}
-	#gallery {
+	/* #gallery {
 	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-	}
+	} */
 }
 
 

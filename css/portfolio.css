@@ -1,0 +1,119 @@
+/******************
+BEGIN GALLERY
+******************/
+
+#projects {
+	display: flex;
+	flex-direction: column;
+	background: var(--primary-backround-color);
+	color: var(--primary-text-color);
+	text-align: center;
+	padding: 10px 20px;
+	/*min-height: 850px;*/
+	grid-area: projects;
+}
+
+#gallery {
+	/*min-height: 35vh;*/
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(200px, 1fr));
+	width: 100%;
+	padding: 0;
+	grid-gap: 20px;
+}
+
+#gallery a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.project-tile {
+	background: var(--secondary-backround-color);
+	border-radius: 8px;
+	overflow: hidden;
+	padding: 10px;
+	text-align: center;
+	line-height: 2em;
+	color: var(--secondary-text-color);
+}
+
+
+.project-tile img {
+	width: 300px;
+	border-radius: 5px;
+}
+
+
+/******************
+END GALLERY
+******************/
+/******************
+BEGIN RESPONSIVE
+******************/
+
+#gallery {
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/*688px*/
+@media (min-width: 42em)  {
+
+	nav a {
+		font-size: 1.25em;
+		padding: 1.5em;
+	}
+    
+	#gallery {
+        grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+        }
+
+	h1 {
+		font-size: 3em;
+	}
+
+	footer {
+		font-size: 0.8em;
+	}
+
+}
+
+
+/*992px*/
+@media (min-width: 62em) {
+	
+
+	h1 {
+		font-size: 3em;
+	}
+	
+	/*at this size about me section is already visible so hide this link*/
+	#navbar ul {
+		margin: 0;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		box-shadow: 1px 0 1px 1px black;
+		padding:0;
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat();
+		grid-template-areas: 
+		"projects projects"
+		"footer footer"
+		;
+	}
+	#gallery {
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	}
+}
+
+/******************
+END RESPONSIVE
+******************/

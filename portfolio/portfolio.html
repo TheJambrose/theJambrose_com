@@ -11,7 +11,9 @@
     <title>Portfolio Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,12 +26,36 @@
             <hr>&#9789;
         </button>
         <ul>
-            <li id="nav-about-me"><a href="#about-me">About Me</a></li>
-            <li><a href="#projects">Portfolio</a></li>
-            <li><a href="#tech-social">Learn More</a></li>
+            <li id="home-button"><a href="../index.html">Home</a></li>
+            <li class="selected"><a href="#projects">Portfolio</a></li>
         </ul>
     </nav>
-    <script src="" async defer></script>
+    <main>
+        <section id="projects">
+            <h2>Example Projects</h2>
+
+            <div id="gallery">
+                <a href="../portfolio/covid_API.html" class="project-tile"><img
+                        alt="preview image covid state comparison page" src="../img/covid-state-compare.png">COVID-19
+                    State Comparison</a>
+                <a href="https://codepen.io/thejambrose/pen/KKpqNMJ" class="project-tile"><img
+                        alt="preview image of tribute page" src="../img/tribute_turing.png">Tribute Page</a>
+
+                <a href="https://codepen.io/thejambrose/pen/WNvEwvJ" class="project-tile"><img
+                        alt="preview image of product langing page" src="../img/prod_landing.png">Product Landing
+                    Page</a>
+
+                <a href="https://codepen.io/thejambrose/pen/LYVjgqx" class="project-tile"><img
+                        alt="preview image of technical documentation page" src="../img/tech_doc.png">Technical
+                    Documentation</a>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Copyright 2020 </p>
+    </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
