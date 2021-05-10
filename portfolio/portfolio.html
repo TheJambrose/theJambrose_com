@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav id="navbar">
+        <button id="theme-switcher" alt="switch day/night mode" role="switch day/night mode"
+            onclick="swapTheme()">&#9788;
+            <hr>&#9789;
+        </button>
+        <ul>
+            <li id="home-button"><a href="../index.html">Home</a></li>
+            <li class="selected"><a href="#projects">Portfolio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="projects">
+            <h2>Example Projects</h2>
+
+            <div id="gallery">
+                <a href="../portfolio/covid_API.html" class="project-tile"><img
+                        alt="preview image covid state comparison page" src="../img/covid-state-compare.png">COVID-19
+                    State Comparison</a>
+                <a href="https://codepen.io/thejambrose/pen/KKpqNMJ" class="project-tile"><img
+                        alt="preview image of tribute page" src="../img/tribute_turing.png">Tribute Page</a>
+
+                <a href="https://codepen.io/thejambrose/pen/WNvEwvJ" class="project-tile"><img
+                        alt="preview image of product langing page" src="../img/prod_landing.png">Product Landing
+                    Page</a>
+
+                <a href="https://codepen.io/thejambrose/pen/LYVjgqx" class="project-tile"><img
+                        alt="preview image of technical documentation page" src="../img/tech_doc.png">Technical
+                    Documentation</a>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Copyright 2020 </p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
